@@ -1,0 +1,4 @@
+# Python 3.12.8
+pydantic>=2.7,<3        # modelo de datos y validación (núcleo)
+streamlit>=1.40         # interfaz interactiva (app.py); instala pandas
+tzdata; sys_platform == "win32"   # base de zonas IANA para zoneinfo en Windows

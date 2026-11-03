@@ -1,0 +1,77 @@
+{
+  "transacciones": [
+    {
+      "transaction_id": "TX-1001",
+      "amount": "1,250.50",
+      "currency": "USD",
+      "status": "completed",
+      "created_at": "2026-10-01T14:30:00Z"
+    },
+    {
+      "transaction_id": "TX-1002",
+      "amount": 89.9,
+      "currency": "€",
+      "status": "PENDING",
+      "created_at": "2026-10-01T09:00:00-06:00"
+    },
+    {
+      "transaction_id": "TX-1003",
+      "amount": "abc",
+      "currency": "USD",
+      "status": "completed",
+      "created_at": "2026-10-02T10:00:00Z"
+    },
+    {
+      "transaction_id": "TX-1001",
+      "amount": "1,250.50",
+      "currency": "USD",
+      "status": "completed",
+      "created_at": "2026-10-01T14:30:00Z"
+    },
+    {
+      "referencia": "BL-0077",
+      "fecha": "01/10/2026 08:15",
+      "importe": { "valor": "2.500,75", "divisa": "dólares" },
+      "estado": "Aprobada"
+    },
+    {
+      "referencia": "BL-0078",
+      "fecha": "03/10/2026",
+      "importe": { "valor": "-150,00", "divisa": "USD" },
+      "estado": "Reembolsado"
+    },
+    {
+      "referencia": "BL-0079",
+      "fecha": "31/02/2026 10:00",
+      "importe": { "valor": "300,00", "divisa": "pesos de oro" },
+      "estado": "en revisión"
+    },
+    {
+      "txnId": "m-501",
+      "amountCents": 125050,
+      "currencyCode": "usd",
+      "state": "SUCCESS",
+      "timestampMs": 1790955900000
+    },
+    {
+      "txnId": "m-502",
+      "amountCents": 4999,
+      "currencyCode": "MXN",
+      "state": "REVERSED",
+      "timestampMs": 1791018630000
+    },
+    {
+      "txnId": "m-503",
+      "amountCents": 0,
+      "currencyCode": "USD",
+      "state": "FAILED",
+      "timestampMs": 1791230400000
+    },
+    {
+      "id": 42,
+      "valor": 10,
+      "tipo": "desconocido"
+    },
+    "registro corrupto"
+  ]
+}

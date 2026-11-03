@@ -1,0 +1,381 @@
+{
+  "origen": "ejemplos/entrada_ejemplo.json",
+  "errores_carga": [],
+  "validas": [
+    {
+      "id": "pasarela_pagos:TX-1001",
+      "id_origen": "TX-1001",
+      "fuente": "pasarela_pagos",
+      "indice_origen": 0,
+      "fecha_utc": "2026-10-01T14:30:00Z",
+      "zona_horaria_asumida": null,
+      "monto": "1250.50",
+      "moneda": "USD",
+      "estado": "completada",
+      "estado_origen": "completed",
+      "incidencias": [],
+      "registro_original": {
+        "transaction_id": "TX-1001",
+        "amount": "1,250.50",
+        "currency": "USD",
+        "status": "completed",
+        "created_at": "2026-10-01T14:30:00Z"
+      },
+      "es_valida": true
+    },
+    {
+      "id": "pasarela_pagos:TX-1002",
+      "id_origen": "TX-1002",
+      "fuente": "pasarela_pagos",
+      "indice_origen": 1,
+      "fecha_utc": "2026-10-01T15:00:00Z",
+      "zona_horaria_asumida": null,
+      "monto": "89.9",
+      "moneda": "EUR",
+      "estado": "pendiente",
+      "estado_origen": "PENDING",
+      "incidencias": [],
+      "registro_original": {
+        "transaction_id": "TX-1002",
+        "amount": "89.9",
+        "currency": "€",
+        "status": "PENDING",
+        "created_at": "2026-10-01T09:00:00-06:00"
+      },
+      "es_valida": true
+    },
+    {
+      "id": "banco_local:BL-0077",
+      "id_origen": "BL-0077",
+      "fuente": "banco_local",
+      "indice_origen": 4,
+      "fecha_utc": "2026-10-01T14:15:00Z",
+      "zona_horaria_asumida": "America/El_Salvador",
+      "monto": "2500.75",
+      "moneda": "USD",
+      "estado": "completada",
+      "estado_origen": "Aprobada",
+      "incidencias": [
+        {
+          "codigo": "zona_horaria_asumida",
+          "severidad": "advertencia",
+          "campo": "fecha_utc",
+          "mensaje": "la fuente no indicó zona horaria; se asumió America/El_Salvador"
+        }
+      ],
+      "registro_original": {
+        "referencia": "BL-0077",
+        "fecha": "01/10/2026 08:15",
+        "importe": {
+          "valor": "2.500,75",
+          "divisa": "dólares"
+        },
+        "estado": "Aprobada"
+      },
+      "es_valida": true
+    },
+    {
+      "id": "banco_local:BL-0078",
+      "id_origen": "BL-0078",
+      "fuente": "banco_local",
+      "indice_origen": 5,
+      "fecha_utc": "2026-10-03T06:00:00Z",
+      "zona_horaria_asumida": "America/El_Salvador",
+      "monto": "-150.00",
+      "moneda": "USD",
+      "estado": "reembolsada",
+      "estado_origen": "Reembolsado",
+      "incidencias": [
+        {
+          "codigo": "monto_negativo",
+          "severidad": "advertencia",
+          "campo": "monto",
+          "mensaje": "monto negativo: -150.00"
+        },
+        {
+          "codigo": "zona_horaria_asumida",
+          "severidad": "advertencia",
+          "campo": "fecha_utc",
+          "mensaje": "la fuente no indicó zona horaria; se asumió America/El_Salvador"
+        }
+      ],
+      "registro_original": {
+        "referencia": "BL-0078",
+        "fecha": "03/10/2026",
+        "importe": {
+          "valor": "-150,00",
+          "divisa": "USD"
+        },
+        "estado": "Reembolsado"
+      },
+      "es_valida": true
+    },
+    {
+      "id": "app_movil:m-501",
+      "id_origen": "m-501",
+      "fuente": "app_movil",
+      "indice_origen": 7,
+      "fecha_utc": "2026-10-02T15:45:00Z",
+      "zona_horaria_asumida": null,
+      "monto": "1250.50",
+      "moneda": "USD",
+      "estado": "completada",
+      "estado_origen": "SUCCESS",
+      "incidencias": [],
+      "registro_original": {
+        "txnId": "m-501",
+        "amountCents": 125050,
+        "currencyCode": "usd",
+        "state": "SUCCESS",
+        "timestampMs": 1790955900000
+      },
+      "es_valida": true
+    },
+    {
+      "id": "app_movil:m-502",
+      "id_origen": "m-502",
+      "fuente": "app_movil",
+      "indice_origen": 8,
+      "fecha_utc": "2026-10-03T09:10:30Z",
+      "zona_horaria_asumida": null,
+      "monto": "49.99",
+      "moneda": "MXN",
+      "estado": "reembolsada",
+      "estado_origen": "REVERSED",
+      "incidencias": [],
+      "registro_original": {
+        "txnId": "m-502",
+        "amountCents": 4999,
+        "currencyCode": "MXN",
+        "state": "REVERSED",
+        "timestampMs": 1791018630000
+      },
+      "es_valida": true
+    },
+    {
+      "id": "app_movil:m-503",
+      "id_origen": "m-503",
+      "fuente": "app_movil",
+      "indice_origen": 9,
+      "fecha_utc": "2026-10-05T20:00:00Z",
+      "zona_horaria_asumida": null,
+      "monto": "0.00",
+      "moneda": "USD",
+      "estado": "fallida",
+      "estado_origen": "FAILED",
+      "incidencias": [
+        {
+          "codigo": "monto_cero",
+          "severidad": "advertencia",
+          "campo": "monto",
+          "mensaje": "monto igual a cero"
+        }
+      ],
+      "registro_original": {
+        "txnId": "m-503",
+        "amountCents": 0,
+        "currencyCode": "USD",
+        "state": "FAILED",
+        "timestampMs": 1791230400000
+      },
+      "es_valida": true
+    }
+  ],
+  "rechazadas": [
+    {
+      "id": "pasarela_pagos:TX-1003",
+      "id_origen": "TX-1003",
+      "fuente": "pasarela_pagos",
+      "indice_origen": 2,
+      "fecha_utc": "2026-10-02T10:00:00Z",
+      "zona_horaria_asumida": null,
+      "monto": null,
+      "moneda": "USD",
+      "estado": "completada",
+      "estado_origen": "completed",
+      "incidencias": [
+        {
+          "codigo": "monto_invalido",
+          "severidad": "error",
+          "campo": "monto",
+          "mensaje": "monto no numérico: 'abc'"
+        }
+      ],
+      "registro_original": {
+        "transaction_id": "TX-1003",
+        "amount": "abc",
+        "currency": "USD",
+        "status": "completed",
+        "created_at": "2026-10-02T10:00:00Z"
+      },
+      "es_valida": false
+    },
+    {
+      "id": "pasarela_pagos:TX-1001",
+      "id_origen": "TX-1001",
+      "fuente": "pasarela_pagos",
+      "indice_origen": 3,
+      "fecha_utc": "2026-10-01T14:30:00Z",
+      "zona_horaria_asumida": null,
+      "monto": "1250.50",
+      "moneda": "USD",
+      "estado": "completada",
+      "estado_origen": "completed",
+      "incidencias": [
+        {
+          "codigo": "id_duplicado",
+          "severidad": "error",
+          "campo": "id",
+          "mensaje": "id repetido; primera aparición en el índice 0"
+        }
+      ],
+      "registro_original": {
+        "transaction_id": "TX-1001",
+        "amount": "1,250.50",
+        "currency": "USD",
+        "status": "completed",
+        "created_at": "2026-10-01T14:30:00Z"
+      },
+      "es_valida": false
+    },
+    {
+      "id": "banco_local:BL-0079",
+      "id_origen": "BL-0079",
+      "fuente": "banco_local",
+      "indice_origen": 6,
+      "fecha_utc": null,
+      "zona_horaria_asumida": null,
+      "monto": "300.00",
+      "moneda": null,
+      "estado": "desconocido",
+      "estado_origen": "en revisión",
+      "incidencias": [
+        {
+          "codigo": "moneda_no_reconocida",
+          "severidad": "error",
+          "campo": "moneda",
+          "mensaje": "moneda no reconocida: 'pesos de oro'"
+        },
+        {
+          "codigo": "fecha_invalida",
+          "severidad": "error",
+          "campo": "fecha_utc",
+          "mensaje": "fecha con formato no reconocido: '31/02/2026 10:00'"
+        },
+        {
+          "codigo": "estado_desconocido",
+          "severidad": "error",
+          "campo": "estado",
+          "mensaje": "estado de origen sin mapeo: 'en revisión'"
+        }
+      ],
+      "registro_original": {
+        "referencia": "BL-0079",
+        "fecha": "31/02/2026 10:00",
+        "importe": {
+          "valor": "300,00",
+          "divisa": "pesos de oro"
+        },
+        "estado": "en revisión"
+      },
+      "es_valida": false
+    },
+    {
+      "id": "no_reconocida:#10",
+      "id_origen": null,
+      "fuente": "no_reconocida",
+      "indice_origen": 10,
+      "fecha_utc": null,
+      "zona_horaria_asumida": null,
+      "monto": null,
+      "moneda": null,
+      "estado": "desconocido",
+      "estado_origen": null,
+      "incidencias": [
+        {
+          "codigo": "fuente_no_reconocida",
+          "severidad": "error",
+          "campo": null,
+          "mensaje": "ninguna fuente reconoce la estructura; claves: id, tipo, valor"
+        }
+      ],
+      "registro_original": {
+        "id": 42,
+        "valor": 10,
+        "tipo": "desconocido"
+      },
+      "es_valida": false
+    },
+    {
+      "id": "no_reconocida:#11",
+      "id_origen": null,
+      "fuente": "no_reconocida",
+      "indice_origen": 11,
+      "fecha_utc": null,
+      "zona_horaria_asumida": null,
+      "monto": null,
+      "moneda": null,
+      "estado": "desconocido",
+      "estado_origen": null,
+      "incidencias": [
+        {
+          "codigo": "registro_no_es_objeto",
+          "severidad": "error",
+          "campo": null,
+          "mensaje": "se esperaba un objeto JSON, se recibió str"
+        }
+      ],
+      "registro_original": "registro corrupto",
+      "es_valida": false
+    }
+  ],
+  "metricas": {
+    "total_procesadas": 12,
+    "total_validas": 7,
+    "total_invalidas": 5,
+    "total_con_advertencias": 3,
+    "conteo_por_estado": {
+      "completada": 5,
+      "desconocido": 3,
+      "fallida": 1,
+      "pendiente": 1,
+      "reembolsada": 2
+    },
+    "conteo_por_fuente": {
+      "app_movil": 3,
+      "banco_local": 3,
+      "no_reconocida": 2,
+      "pasarela_pagos": 4
+    },
+    "conteo_por_motivo": {
+      "estado_desconocido": 1,
+      "fecha_invalida": 1,
+      "fuente_no_reconocida": 1,
+      "id_duplicado": 1,
+      "moneda_no_reconocida": 1,
+      "monto_cero": 1,
+      "monto_invalido": 1,
+      "monto_negativo": 1,
+      "registro_no_es_objeto": 1,
+      "zona_horaria_asumida": 2
+    },
+    "totales_por_moneda": {
+      "EUR": "89.9",
+      "MXN": "49.99",
+      "USD": "4851.75"
+    },
+    "totales_por_moneda_y_estado": {
+      "EUR": {
+        "pendiente": "89.9"
+      },
+      "MXN": {
+        "reembolsada": "49.99"
+      },
+      "USD": {
+        "completada": "5001.75",
+        "fallida": "0.00",
+        "reembolsada": "-150.00"
+      }
+    }
+  }
+}
